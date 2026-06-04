@@ -1,10 +1,10 @@
 ---
 name: uzproof
-description: Verify real on-chain usage on Solana — swaps, staking, token holds, liquidity, NFTs across 14 protocols (Jupiter, Marinade, Orca, Raydium, Drift, Kamino, MarginFi, Meteora, Jito, Tensor, Magic Eden, Metaplex, Sanctum, SPL Token). Anti-fraud scoring and on-chain SAS attestation. Use when verifying wallet activity, building proof-of-use features, gating access by on-chain behavior, distributing rewards based on verified actions, or detecting wash trading and sybil attacks.
+description: Verify real on-chain usage on Solana — swaps, staking, token holds, liquidity, NFTs across 15 protocols (Jupiter, Marinade, Sanctum, Orca, Raydium, Drift, Drift Vaults, Kamino, MarginFi, Meteora, Jito, Tensor, Magic Eden, Metaplex, SPL Token). Anti-fraud scoring and on-chain SAS attestation. Use when verifying wallet activity, building proof-of-use features, gating access by on-chain behavior, distributing rewards based on verified actions, or detecting wash trading and sybil attacks.
 license: MIT
 metadata:
   author: uzproof
-  version: "1.1.0"
+  version: "2.0.0"
 ---
 
 # UZPROOF — Proof-of-Use Verification for Solana
@@ -114,7 +114,7 @@ const info = await client.detectContract('JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNy
 // info.program.supportedActions = ["defi_swap", "defi_swap_buy", ...]
 ```
 
-See [references/contract-detect.md](references/contract-detect.md) for all 14 protocols.
+See [references/contract-detect.md](references/contract-detect.md) for all 15 protocols.
 
 ### `getTokenInfo(mint)` — Token Metadata & Price
 
@@ -175,6 +175,8 @@ See [references/attestation.md](references/attestation.md) for SAS integration d
 | `defi_repay` | Loan repayment |
 | `defi_claim` | Reward claim |
 | `defi_create_lst` | LST creation |
+| `defi_perp_trade` | Perpetual futures trade |
+| `defi_perp_volume` | Perpetual futures volume |
 
 ### NFT Actions
 
@@ -307,8 +309,8 @@ import { SAS_PROGRAM_ID, UZPROOF_CREDENTIAL, POU_SCHEMA, ACTION_TYPES, SUPPORTED
 SAS_PROGRAM_ID     // "22zoJMtdu4tQc2PzL74ZUT7FrwgB1Udec8DdW4yw4BdG"
 UZPROOF_CREDENTIAL // "2chgBfvkwhnHQVVAyXKDK6CBjbCRMQ8aLWrysL5UQyyF"
 POU_SCHEMA         // "8yW2BboQuhp2MMmrQLFz35V6VSqC48MF7wZ5bmzcTeTF"
-ACTION_TYPES       // All 24 supported action types
-SUPPORTED_PROTOCOLS // 14 protocol names
+ACTION_TYPES       // All 26 supported action types
+SUPPORTED_PROTOCOLS // 15 protocol names
 ```
 
 ## Companion Skills
